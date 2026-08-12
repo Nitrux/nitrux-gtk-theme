@@ -1,15 +1,16 @@
-name: Build and package GTK themes
+name: Build and push packages to PackageCloud.
 
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
     paths-ignore:
       - 'README.md'
 
 jobs:
   build:
     runs-on: ubuntu-24.04
+
     container:
       image: debian:testing
       env:
@@ -19,12 +20,17 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install necessary packages
-        run: apt -q update && apt -yy install devscripts equivs lintian sudo
+        run: apt -q update && apt -yy install devscripts equivs lintian ruby-full sudo
+
+      - name: Install PackageCloud
+        run: gem install package_cloud
 
       - name: Generate Debian package
-        run: sudo ./gh-build.sh
+        run: |
+          sudo ./gh-build.sh
 
-      - uses: actions/upload-artifact@v4
-        with:
-          name: nx-gtk-themes-debian
-          path: '*.deb'
+      - name: Push package.
+        env:
+          PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
+        run: |
+          package_cloud push nitrux/testing/debian/duke $(pwd)/*.deb
