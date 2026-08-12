@@ -20,14 +20,14 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install necessary packages
-        run: apt -q update && apt -yy install devscripts equivs lintian ruby-full sudo
+        run: apt -q update && apt -yy install devscripts equivs lintian ruby-full sudo xvfb
 
       - name: Install PackageCloud
         run: gem install package_cloud
 
       - name: Generate Debian package
         run: |
-          sudo ./gh-build.sh
+          xvfb-run --auto-servernum --server-args="-screen 0 1280x1024x24" sudo ./gh-build.sh
 
       - name: Push package.
         env:

@@ -71,15 +71,15 @@
 		}
 
 		&:first-child > button.flat {
-			@extend %linked_button:first-child;
+			@extend %linked_button, :first-child;
 		}
 
 		&:last-child > button.flat {
-			@extend %linked_button:last-child;
+			@extend %linked_button, :last-child;
 		}
 
 		&:only-child > button.flat {
-			@extend %linked_button:only-child;
+			@extend %linked_button, :only-child;
 		}
 	}
 }

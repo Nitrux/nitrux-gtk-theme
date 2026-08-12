@@ -33,6 +33,19 @@ $button_bg: #313244; // Surface0
 $button_border: #585b70; // Surface2
 $entry_border: $borders_color;
 
+$scrollbar_bg_color: $bg_color;
+$scrollbar_slider_color: $base_color;
+$scrollbar_slider_hover_color: lighten($base_color, 5%);
+$scrollbar_slider_active_color: $selected_bg_color;
+
+$switch_disabled_bg_color: $insensitive_bg_color;
+$switch_disabled_border_color: $insensitive_borders_color;
+$switch_disabled_fg_color: $insensitive_fg_color;
+$switch_disabled_slider_bg_color: shade($insensitive_bg_color, .85);
+$switch_bg_color: $base_color;
+$switch_fg_color: $fg_color;
+$switch_slider_bg_color: $bg_color;
+
 // Semantic colors
 $info_fg_color: #1e1e2e; // Base
 $info_bg_color: #74c7ec; // Sapphire

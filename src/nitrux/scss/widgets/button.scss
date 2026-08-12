@@ -396,21 +396,21 @@
 
 		.linked:not(.vertical) > & > box > button.combo {
 			&:dir(ltr) { @extend %linked_middle; }
-			&:dir(rtl) { @extend %linked_middle:dir(rtl); }
+			&:dir(rtl) { @extend %linked_middle, :dir(rtl); }
 		}
 
-		.linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked_button:first-child; }
+		.linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked_button, :first-child; }
 
-		.linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked_button:last-child; }
+		.linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked_button, :last-child; }
 
-		.linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked_button:only-child; }
+		.linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked_button, :only-child; }
 
 		.linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
 
-		.linked.vertical > &:first-child > box > button.combo { @extend %linked_vertical_button:first-child; }
+		.linked.vertical > &:first-child > box > button.combo { @extend %linked_vertical_button, :first-child; }
 
-		.linked.vertical > &:last-child > box > button.combo { @extend %linked_vertical_button:last-child; }
+		.linked.vertical > &:last-child > box > button.combo { @extend %linked_vertical_button, :last-child; }
 
-		.linked.vertical > &:only-child > box > button.combo { @extend %linked_vertical_button:only-child; }
+		.linked.vertical > &:only-child > box > button.combo { @extend %linked_vertical_button, :only-child; }
 	}
 }

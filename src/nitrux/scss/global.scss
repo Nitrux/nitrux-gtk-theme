@@ -32,6 +32,19 @@ $white: #eff1f5; // Base
 $button_border: $borders_color;
 $entry_border: $borders_color;
 
+$scrollbar_bg_color: $bg_color;
+$scrollbar_slider_color: $base_color;
+$scrollbar_slider_hover_color: darken($base_color, 5%);
+$scrollbar_slider_active_color: $selected_bg_color;
+
+$switch_disabled_bg_color: $insensitive_bg_color;
+$switch_disabled_border_color: $insensitive_borders_color;
+$switch_disabled_fg_color: $insensitive_fg_color;
+$switch_disabled_slider_bg_color: shade($insensitive_bg_color, .85);
+$switch_bg_color: $base_color;
+$switch_fg_color: $fg_color;
+$switch_slider_bg_color: $bg_color;
+
 // Semantic colors
 $info_fg_color: #eff1f5; // Base
 $info_bg_color: #209fb5; // Sapphire

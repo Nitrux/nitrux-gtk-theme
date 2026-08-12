@@ -5,7 +5,7 @@
 @include exports("synaptic") {
     GtkWindow > GtkVBox > .dock {
         &, > GtkHBox > GtkToolbar {
-            @include linear-gradient($toolbar-bg-color);
+            @include linear-gradient($toolbar_bg_color);
 
             padding: $spacing;
             border: 0;
