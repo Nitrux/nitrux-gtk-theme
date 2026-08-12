@@ -1,78 +1,60 @@
 @import "functions";
 
-// default color scheme
-$bg_color: #fafafa;
-$fg_color: #4d4d4d;
-$base_color: #f5f5f5;
-$text_color:  #0b0b0b;
-$selected_bg_color: #26c6da;
-$selected_fg_color: #fafafa;
-$tooltip_bg_color: #efefef;
-$tooltip_fg_color: #0b0b0b;
+// Catppuccin Latte palette
+$bg_color: #eff1f5; // Base
+$fg_color: #4c4f69; // Text
+$base_color: #e6e9ef; // Mantle
+$text_color: #4c4f69; // Text
+$selected_bg_color: #26c6da; // Nitrux highlight
+$selected_fg_color: #eff1f5; // Base
+$tooltip_bg_color: #ccd0da; // Surface0
+$tooltip_fg_color: #4c4f69; // Text
 
+$borders_color: #bcc0cc; // Surface1
 $selected_borders_color: shade($selected_bg_color, .85);
-$borders_color: #c3c9d6;
 $borders_edge: transparentize(white, 0.2);
 
-//insensitive state derived colors
-$insensitive_fg_color: mix($fg_color, $bg_color, .5);
-$insensitive_bg_color: mix($bg_color, $base_color, .6);
-$insensitive_borders_color: $borders_color;
+// Insensitive state
+$insensitive_fg_color: #6c6f85; // Subtext0
+$insensitive_bg_color: #e6e9ef; // Mantle
+$insensitive_borders_color: #ccd0da; // Surface0
 
-// dark colors
-$dark_bg_color: shade($bg_color, .95);
-$dark_fg_color: shade($text_color, .35);
+// Header and shadow colors
+$dark_bg_color: #e6e9ef; // Mantle
+$dark_fg_color: #4c4f69; // Text
+$dark_shadow: #4c4f69; // Text
+$light_shadow: #ffffff;
 
-// shadows
-$dark_shadow: #0b0b0b;
-$light_shadow: #f5f5f5;
-
-// white and black
-$black: #0b0b0b;
-$white: #fafafa;
+// White and black
+$black: #4c4f69; // Text
+$white: #eff1f5; // Base
 
 $button_border: $borders_color;
 $entry_border: $borders_color;
 
-$scrollbar_bg_color: $bg_color;
-$scrollbar_slider_color: $bg_color;
-$scrollbar_slider_hover_color: darken($bg_color, 5%);
-$scrollbar_slider_active_color: $selected_bg_color;
+// Semantic colors
+$info_fg_color: #eff1f5; // Base
+$info_bg_color: #209fb5; // Sapphire
+$warning_fg_color: #4c4f69; // Text
+$warning_bg_color: #df8e1d; // Yellow
+$question_fg_color: #eff1f5; // Base
+$question_bg_color: #8839ef; // Mauve
+$error_fg_color: #eff1f5; // Base
+$error_bg_color: #d20f39; // Red
+$link_color: #1e66f5; // Blue
+$success_color: #40a02b; // Green
+$warning_color: #df8e1d; // Yellow
+$error_color: #d20f39; // Red
 
-$switch_disabled_bg_color: $insensitive_bg_color;
-$switch_disabled_border_color: $borders_color;
-$switch_disabled_fg_color: $insensitive_fg_color;
-$switch_disabled_slider_bg_color: shade($insensitive_bg_color, .85);
-$switch_bg_color: $base_color;
-$switch_fg_color: $fg_color;
-$switch_slider_bg_color: $bg_color;
-
-// misc colors used by gtk+
-$info_fg_color: #f5f5f5;
-$info_bg_color: #03a9f4;
-$warning_fg_color: #f5f5f5;
-$warning_bg_color: #dca22c;
-$question_fg_color: #f5f5f5;
-$question_bg_color: #a782e8;
-$error_fg_color: #f5f5f5;
-$error_bg_color: #f44336;
-$link_color: #40abd3;
-$success_color: #009b7c;
-$warning_color: #dca22c;
-$error_color: #d85882;
-
+// GTK roles
 $toolbar_bg_color: $bg_color;
 $toolbar_fg_color: $fg_color;
-
 $titlebar_bg_color: $dark_bg_color;
 $titlebar_fg_color: $dark_fg_color;
-
 $menu_bg_color: $bg_color;
 $menu_fg_color: $fg_color;
-
 $menubar_bg_color: $dark_bg_color;
 $menubar_fg_color: $dark_fg_color;
-
 $panel_bg_color: $dark_bg_color;
 $panel_fg_color: $dark_fg_color;
 
@@ -99,7 +81,6 @@ $wm_icons_unfocused: mix($titlebar_fg_color, $titlebar_bg_color, .4);
 $wm_icons_unfocused_prelight: $selected_bg_color;
 $wm_icons_unfocused_pressed: shade($selected_bg_color, .8);
 
-
 //colors for the backdrop state, derived from the main colors.
 $backdrop_base_color: $base_color;
 $backdrop_text_color: $fg_color;
@@ -121,7 +102,7 @@ $backdrop_scrollbar_slider_color: mix($backdrop_fg_color, $backdrop_bg_color, .4
 
 $backdrop_menu_color: $backdrop_base_color;
 
-$drop_target_color: #21BB98;
+$drop_target_color: #179299; // Teal
 
 $roundness: 4px;
 $spacing: 5px;

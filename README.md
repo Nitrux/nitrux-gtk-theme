@@ -1,19 +1,15 @@
-# NX GTK Themes [![Build Status](https://travis-ci.org/nx-desktop/nx-gtk-themes.svg?branch=master)](https://travis-ci.org/nx-desktop/nx-gtk-themes)
+# Nitrux GTK Themes
 
-Minimal theme for GTK.
+Minimal light and dark themes for GTK 4, GTK 3, and legacy GTK 2 applications.
 
-# Requirements
-- GTK 3.20+.
-- GTK 2.24+.
-- GTK 2 Murrine engine.
-
-# Installing
-- Clone this Git repository or download zip.
-- Extract to `~/.themes/` or `/usr/share/themes/`.
+The light variant uses Catppuccin Latte and the dark variant uses Catppuccin Mocha, with the Nitrux cyan highlight (`#26C6DA`) retained across both variants.
 
 # Issues
-If you find problems with the contents of this repository please create an issue.
 
-Artwork is Licensed under the [Creative Commons Attribution-Share Alike 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/).
+If you find problems with the contents of this repository, please create an issue and use the **🐞 Bug report** template.
 
-©2019 Nitrux Latinoamericana S.C.
+## Submitting a bug report
+
+Before submitting a bug, you should look at the [existing bug reports](https://github.com/Nitrux/nitrux-gtk-theme/issues) to verify that no one has reported the bug already.
+
+©2026 Nitrux Latinoamericana S.C.

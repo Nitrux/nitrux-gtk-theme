@@ -1,0 +1,478 @@
+@import "functions";
+@import "global";
+$surface_color: mix($bg_color, $base_color, .5);
+$border_color: $borders_color;
+$disabled_color: $insensitive_fg_color;
+$focus_color: $selected_bg_color;
+$headerbar_color: $dark_bg_color;
+$headerbar_text_color: $dark_fg_color;
+$popover_color: $base_color;
+$radius: $roundness;
+
+/* GTK4 and libadwaita compatibility colors. */
+@define-color theme_bg_color #{$bg_color};
+@define-color theme_fg_color #{$fg_color};
+@define-color theme_base_color #{$base_color};
+@define-color theme_text_color #{$text_color};
+@define-color theme_selected_bg_color #{$selected_bg_color};
+@define-color theme_selected_fg_color #{$selected_fg_color};
+@define-color borders_color #{$border_color};
+@define-color insensitive_bg_color #{$insensitive_bg_color};
+@define-color insensitive_fg_color #{$disabled_color};
+@define-color accent_color #{$selected_bg_color};
+@define-color accent_bg_color #{$selected_bg_color};
+@define-color accent_fg_color #{$selected_fg_color};
+@define-color destructive_color #{$error_color};
+@define-color success_color #{$success_color};
+@define-color warning_color #{$warning_color};
+
+:root {
+    --accent-color: #{$selected_bg_color};
+    --accent-bg-color: #{$selected_bg_color};
+    --accent-fg-color: #{$selected_fg_color};
+    --destructive-color: #{$error_color};
+    --destructive-bg-color: #{$error_color};
+    --success-color: #{$success_color};
+    --success-bg-color: #{$success_color};
+    --warning-color: #{$warning_color};
+    --warning-bg-color: #{$warning_color};
+    --error-color: #{$error_color};
+    --error-bg-color: #{$error_color};
+    --window-bg-color: #{$bg_color};
+    --window-fg-color: #{$fg_color};
+    --view-bg-color: #{$base_color};
+    --view-fg-color: #{$text_color};
+    --headerbar-bg-color: #{$headerbar_color};
+    --headerbar-fg-color: #{$headerbar_text_color};
+    --card-bg-color: #{$surface_color};
+    --card-fg-color: #{$fg_color};
+    --border-color: #{$border_color};
+    --disabled-opacity: 50%;
+}
+
+* {
+    color: $fg_color;
+    -gtk-icon-shadow: none;
+}
+
+*:disabled {
+    color: $disabled_color;
+}
+
+window,
+window.background,
+.background {
+    background-color: $bg_color;
+    color: $fg_color;
+}
+
+window:backdrop,
+window.background:backdrop {
+    color: $backdrop_fg_color;
+}
+
+headerbar,
+.titlebar {
+    min-height: 30px;
+    padding: 4px 8px;
+    background-color: $headerbar_color;
+    color: $headerbar_text_color;
+    border-bottom: 1px solid shade($headerbar_color, .8);
+}
+
+headerbar:backdrop,
+.titlebar:backdrop {
+    background-color: $backdrop_bg_color;
+    color: $backdrop_fg_color;
+}
+
+windowcontrols button,
+headerbar button.flat,
+headerbar button.image-button,
+.titlebar button.flat {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 4px;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+button,
+menubutton > button,
+splitbutton > button,
+modelbutton {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 5px 10px;
+    border: 1px solid $border_color;
+    border-radius: $radius;
+    background-color: $surface_color;
+    color: $fg_color;
+    box-shadow: none;
+}
+
+button:hover,
+menubutton > button:hover,
+splitbutton > button:hover,
+modelbutton:hover {
+    background-color: shade($surface_color, 1.05);
+    border-color: shade($border_color, .9);
+}
+
+button:active,
+button:checked,
+menubutton > button:active,
+modelbutton:active,
+modelbutton:checked {
+    background-color: shade($surface_color, .92);
+    border-color: shade($border_color, .85);
+}
+
+button:focus-visible,
+entry:focus,
+spinbutton:focus,
+searchentry:focus,
+dropdown:focus,
+checkbutton:focus-visible,
+radiobutton:focus-visible,
+switch:focus-visible,
+scale:focus-visible {
+    outline: 2px solid alpha($focus_color, .55);
+    outline-offset: 1px;
+}
+
+button:disabled,
+modelbutton:disabled {
+    background-color: $insensitive_bg_color;
+    border-color: $insensitive_borders_color;
+    color: $disabled_color;
+}
+
+button.flat,
+button.link,
+modelbutton.flat {
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+button.flat:hover,
+button.link:hover,
+modelbutton.flat:hover {
+    background-color: alpha($fg_color, .08);
+}
+
+button.suggested-action,
+button.suggested-action:checked {
+    background-color: $selected_bg_color;
+    border-color: shade($selected_bg_color, .85);
+    color: $selected_fg_color;
+}
+
+button.destructive-action,
+button.destructive-action:checked {
+    background-color: $error_color;
+    border-color: shade($error_color, .85);
+    color: $white;
+}
+
+entry,
+searchentry,
+spinbutton,
+dropdown button {
+    min-height: 24px;
+    padding: 5px 8px;
+    border: 1px solid $border_color;
+    border-radius: $radius;
+    background-color: $base_color;
+    color: $text_color;
+    caret-color: $selected_bg_color;
+    box-shadow: none;
+}
+
+entry:focus,
+searchentry:focus,
+spinbutton:focus,
+dropdown button:focus {
+    border-color: $focus_color;
+    background-color: $base_color;
+}
+
+entry selection,
+searchentry selection,
+textview text selection,
+label selection {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+}
+
+entry:disabled,
+searchentry:disabled,
+spinbutton:disabled,
+dropdown button:disabled {
+    background-color: $insensitive_bg_color;
+    color: $disabled_color;
+}
+
+checkbutton check,
+radiobutton radio {
+    min-width: 14px;
+    min-height: 14px;
+    margin: 2px 6px 2px 2px;
+    border: 1px solid $border_color;
+    border-radius: 3px;
+    background-color: $base_color;
+}
+
+radiobutton radio {
+    border-radius: 50%;
+}
+
+checkbutton check:checked,
+checkbutton check:indeterminate,
+radiobutton radio:checked,
+radiobutton radio:indeterminate {
+    border-color: $selected_bg_color;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+}
+
+checkbutton check:disabled,
+radiobutton radio:disabled {
+    background-color: $insensitive_bg_color;
+    border-color: $insensitive_borders_color;
+}
+
+switch {
+    min-width: 36px;
+    min-height: 20px;
+    border: 1px solid $border_color;
+    border-radius: 999px;
+    background-color: $border_color;
+}
+
+switch slider {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 1px;
+    border-radius: 50%;
+    background-color: $bg_color;
+    box-shadow: 0 1px 2px alpha($dark_shadow, .35);
+}
+
+switch:checked {
+    background-color: $selected_bg_color;
+    border-color: shade($selected_bg_color, .85);
+}
+
+scale > trough,
+progressbar > trough {
+    min-height: 6px;
+    border-radius: 999px;
+    background-color: alpha($fg_color, .18);
+}
+
+scale > trough > highlight,
+progressbar > trough > progress {
+    min-height: 6px;
+    border-radius: 999px;
+    background-color: $selected_bg_color;
+}
+
+scale > trough > slider {
+    min-width: 14px;
+    min-height: 14px;
+    margin: -4px;
+    border: 1px solid shade($selected_bg_color, .85);
+    border-radius: 50%;
+    background-color: $selected_bg_color;
+}
+
+scrollbar trough {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    min-width: 8px;
+    min-height: 8px;
+    margin: 2px;
+    border-radius: 999px;
+    background-color: alpha($fg_color, .25);
+}
+
+scrollbar slider:hover {
+    background-color: alpha($fg_color, .4);
+}
+
+scrollbar slider:active {
+    background-color: $selected_bg_color;
+}
+
+list,
+listview,
+.view,
+textview,
+textview text,
+viewport,
+scrolledwindow {
+    background-color: $base_color;
+    color: $text_color;
+}
+
+row,
+list row,
+listview row {
+    min-height: 28px;
+    color: $text_color;
+}
+
+row:hover,
+list row:hover,
+listview row:hover {
+    background-color: alpha($selected_bg_color, .12);
+}
+
+row:selected,
+list row:selected,
+listview row:selected {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+}
+
+popover,
+popover > contents,
+menu,
+.menu,
+.context-menu {
+    padding: 4px;
+    border: 1px solid $border_color;
+    border-radius: $radius;
+    background-color: $popover_color;
+    color: $text_color;
+    box-shadow: 0 4px 14px alpha($dark_shadow, .25);
+}
+
+popover modelbutton,
+menuitem {
+    min-height: 24px;
+    padding: 5px 8px;
+    border: 0;
+    background-color: transparent;
+    color: $text_color;
+}
+
+popover modelbutton:hover,
+menuitem:hover {
+    background-color: alpha($selected_bg_color, .15);
+    color: $text_color;
+}
+
+popover modelbutton:active,
+menuitem:active,
+popover modelbutton:checked,
+menuitem:checked {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+}
+
+tooltip {
+    padding: 5px 8px;
+    border: 1px solid $border_color;
+    border-radius: $radius;
+    background-color: $tooltip_bg_color;
+    color: $tooltip_fg_color;
+}
+
+tabbar,
+tabbox,
+notebook {
+    background-color: $bg_color;
+    color: $fg_color;
+}
+
+tabbar tab,
+notebook tab {
+    min-height: 26px;
+    padding: 5px 10px;
+    color: $fg_color;
+}
+
+tabbar tab:hover,
+notebook tab:hover {
+    background-color: alpha($selected_bg_color, .12);
+}
+
+tabbar tab:checked,
+notebook tab:checked {
+    border-bottom: 2px solid $selected_bg_color;
+    color: $selected_bg_color;
+}
+
+separator,
+paned > separator {
+    min-width: 1px;
+    min-height: 1px;
+    background-color: $border_color;
+}
+
+frame > border,
+.card {
+    border: 1px solid $border_color;
+    border-radius: $radius;
+    background-color: $surface_color;
+}
+
+infobar {
+    border: 1px solid alpha($selected_bg_color, .35);
+    background-color: alpha($selected_bg_color, .12);
+}
+
+.link,
+link,
+*:link,
+*:visited {
+    color: $link_color;
+}
+
+.osd,
+window.osd,
+.overlay-bar {
+    border-radius: $radius;
+    background-color: alpha($dark_bg_color, .92);
+    color: $white;
+}
+
+spinner {
+    color: $selected_bg_color;
+}
+
+calendar {
+    padding: 4px;
+    border: 1px solid $border_color;
+    background-color: $base_color;
+    color: $text_color;
+}
+
+calendar:selected {
+    border-radius: $radius;
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+}
+
+stacksidebar row,
+.navigation-sidebar row {
+    padding: 6px 8px;
+    color: $fg_color;
+}
+
+stacksidebar row:selected,
+.navigation-sidebar row:selected {
+    background-color: alpha($selected_bg_color, .18);
+    color: $selected_bg_color;
+}
+
+headerbar windowtitle,
+windowtitle {
+    color: $headerbar_text_color;
+}

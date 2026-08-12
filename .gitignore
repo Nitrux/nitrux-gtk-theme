@@ -1,6 +1,31 @@
-# Compiled source #
-###################
-*.directory
+# Generated and compiled files
+*.a
 *.bak
-/.project
+*.build
+*.buildinfo
+*.changes
 *.db
+*.deb
+*.dsc
+*.directory
+*.o
+*.orig
+*.qmlc
+*.rej
+*.so
+*.so.*
+*.swp
+*.tar.*
+*.user
+
+# Build directories and generated theme files
+/.cache/
+/.project
+/build/
+/cmake-build-*/
+/debian/.debhelper/
+/debian/*.debhelper.log
+/debian/files
+/debian/nx-gtk-themes/
+/source/
+/themes/

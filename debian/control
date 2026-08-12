@@ -1,12 +1,13 @@
-Source: nx-gtk-themes
+Source: nitrux-gtk-theme
 Section: gnome
 Priority: optional
-Maintainer: Luis Lavaire <llavaire01@gmail.com>
-Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.6
+Maintainer: Uri Herrera <uri_herrera@nxos.org>
+Build-Depends: debhelper-compat (= 13), inkscape, sassc
+Standards-Version: 4.7.0
+Homepage: https://github.com/Nitrux/nitrux-gtk-theme
 
-Package: nx-gtk-themes
-Architecture: any
+Package: nitrux-gtk-theme
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: GTK Themes used in Nitrux
  GTK themes to integrate GTK software with

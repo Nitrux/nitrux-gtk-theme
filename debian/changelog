@@ -1,3 +1,24 @@
+nitrux-gtk-theme (1.1.7) nitrux; urgency=medium
+
+  * Add GTK4 stylesheets and package output for both theme variants.
+  * Use Catppuccin Latte and Mocha palettes while retaining the Nitrux cyan highlight.
+
+ -- Nitrux Latinoamericana S.C. <hello@nxos.org>  Tue, 11 Aug 2026 13:00:00 -0600
+
+nitrux-gtk-theme (1.1.6) nitrux; urgency=medium
+
+  * Use the standard Nitrux gh-build.sh Debian packaging layout.
+
+ -- Nitrux Latinoamericana S.C. <hello@nxos.org>  Tue, 11 Aug 2026 12:46:00 -0600
+
+nitrux-gtk-theme (1.1.5) nitrux; urgency=medium
+
+  * Rename package.
+  * Modernize the Debian build and GitHub Actions workflow.
+  * Generate GTK assets with the current Inkscape command-line interface.
+
+ -- Nitrux Latinoamericana S.C. <hello@nxos.org>  Tue, 11 Aug 2026 12:46:00 -0600
+
 nx-gtk-themes (1.1.4) nitrux; urgency=medium
 
   * updated sources.
